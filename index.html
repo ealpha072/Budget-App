@@ -10,13 +10,28 @@
 <body>
     <div class="container">
         <h1 class="mainheader">Alpha Budget App</h1>
-        <div class="budget">
-            <input type="number" placeholder="Enter your budget">
+        <div class="left-side">
+            <div class="budget">
+                <label for="enter-buget">Please enter your budget</label>
+                <input type="number" class="figure" placeholder="Enter your budget">
+            </div>
+            <div class="expenses">
+                <label for="enter-expense-name"></label>
+                <input type="text" placeholder="Name your expense..">
+                <label for="enter-expense-amount"></label>
+                <input type="number">
+            </div>
         </div>
-        <div class="expenses">
-            <input type="text" placeholder="Name your expense..">
-            <input type="number">
+        <div class="right-side">
+            <div class="row">
+                <div class="budget-number">
+                    <h2>BUdget</h2><br>
+                    <i></i><br>
+                    <h3 class="figure">3000</h3>
+                </div>
+            </div>
         </div>
+        
     </div>
     <script src="main.js"></script>
 </body>
