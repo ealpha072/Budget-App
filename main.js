@@ -10,6 +10,8 @@
     const budgetHead = document.querySelector(".budget-head")
     const expHead = document.querySelector(".exp-head")
     const balHead = document.querySelector(".bal-head")
+    //tables
+    const tableBody = document.querySelector(".table-body")
 
 //global variables
 let expensesArr = [];
@@ -24,9 +26,10 @@ submitButton.addEventListener('click',(e)=>{
 
 expButton.addEventListener('click',(e)=>{
     e.preventDefault();
-    displayExpenseBalance();
+    
     expenses();
-    console.log()
+    displayExpenses()
+    displayExpenseBalance();
 })
 
 //functions
@@ -36,21 +39,45 @@ function displayBudget(){
 }
 
 function displayExpenseBalance(){
-    let userExpAmt = expAmt.value;
+    let amounts=[];
+    let totalAmounts;
+    /*let userExpAmt = expAmt.value;
         userBudget = budgetHead.innerHTML;
 
     expHead.innerHTML = userExpAmt;
-    balHead.innerHTML = userBudget-userExpAmt;
+    balHead.innerHTML = userBudget-userExpAmt;*/
+    expensesArr.forEach(item=>{
+        let itemAmt = parseInt(item.amount);
+        amounts.push(itemAmt)
+        //return amounts  
+    })
+     console.log(amounts)
+
+    totalAmounts = amounts.reduce(function(a, b) { return a + b; }, 0)
+    console.log(totalAmounts)
 }
 
 function expenses(){
     let userExpAmt = expAmt.value;
     let userExpName = expName.value;
     expensesArr.push({"name":userExpName,"amount":userExpAmt})
-    console.log(expensesArr);
 }
 
 
 function displayExpenses(){
-    let table =``
+    tableBody.innerHTML = '';
+    expensesArr.forEach(item=>{
+        const data = document.createElement("tr");
+
+        let tableContent =`
+        <td>${item.name}</td>
+        <td>${item.amount}<td>
+        <td>
+            <a href="" class="btn btn-danger"><i class="fa fa-trash"></i>Delete</a>
+            <a href="" class="btn btn-success"><i class="fa fa-pencil"></i>Edit</a>
+        </td>`
+        
+        data.innerHTML = tableContent
+        tableBody.appendChild(data)
+    })
 }
