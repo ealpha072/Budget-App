@@ -11,6 +11,9 @@
     const expHead = document.querySelector(".exp-head")
     const balHead = document.querySelector(".bal-head")
 
+//global variables
+let expensesArr = [];
+
 //EVENT LISTENERS
 submitButton.addEventListener('click',(e)=>{
     e.preventDefault();
@@ -22,6 +25,8 @@ submitButton.addEventListener('click',(e)=>{
 expButton.addEventListener('click',(e)=>{
     e.preventDefault();
     displayExpenseBalance();
+    expenses();
+    console.log()
 })
 
 //functions
@@ -36,4 +41,16 @@ function displayExpenseBalance(){
 
     expHead.innerHTML = userExpAmt;
     balHead.innerHTML = userBudget-userExpAmt;
+}
+
+function expenses(){
+    let userExpAmt = expAmt.value;
+    let userExpName = expName.value;
+    expensesArr.push({"name":userExpName,"amount":userExpAmt})
+    console.log(expensesArr);
+}
+
+
+function displayExpenses(){
+    let table =``
 }
