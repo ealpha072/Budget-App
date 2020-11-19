@@ -26,7 +26,6 @@ submitButton.addEventListener('click',(e)=>{
 
 expButton.addEventListener('click',(e)=>{
     e.preventDefault();
-    
     expenses();
     displayExpenses()
     displayExpenseBalance();
@@ -39,8 +38,9 @@ function displayBudget(){
 }
 
 function displayExpenseBalance(){
-    let amounts=[];
+    let amounts =[];
     let totalAmounts;
+    
     /*let userExpAmt = expAmt.value;
         userBudget = budgetHead.innerHTML;
 
@@ -53,10 +53,15 @@ function displayExpenseBalance(){
     })
      console.log(amounts)
 
-    totalAmounts = amounts.reduce(function(a, b) { return a + b; }, 0)
-    console.log(totalAmounts)
+    totalAmounts = amounts.reduce(function(a, b) { return a + b; }, 0);
+    expHead.innerHTML = totalAmounts;
+    balHead.innerHTML = budgetHead.innerHTML-totalAmounts
+    return totalAmounts;
+    //console.log(totalAmounts)
+
 }
 
+//pushes expenses to arr
 function expenses(){
     let userExpAmt = expAmt.value;
     let userExpName = expName.value;
@@ -81,3 +86,4 @@ function displayExpenses(){
         tableBody.appendChild(data)
     })
 }
+
