@@ -35,17 +35,13 @@ expButton.addEventListener('click',(e)=>{
 function displayBudget(){
     let userBudget = budget.value;
     budgetHead.innerHTML = userBudget;
+    balHead.innerHTML = userBudget;
 }
 
 function displayExpenseBalance(){
     let amounts =[];
     let totalAmounts;
-    
-    /*let userExpAmt = expAmt.value;
-        userBudget = budgetHead.innerHTML;
 
-    expHead.innerHTML = userExpAmt;
-    balHead.innerHTML = userBudget-userExpAmt;*/
     expensesArr.forEach(item=>{
         let itemAmt = parseInt(item.amount);
         amounts.push(itemAmt)
@@ -55,7 +51,7 @@ function displayExpenseBalance(){
 
     totalAmounts = amounts.reduce(function(a, b) { return a + b; }, 0);
     expHead.innerHTML = totalAmounts;
-    balHead.innerHTML = budgetHead.innerHTML-totalAmounts
+    balHead.innerHTML = budgetHead.innerHTML-totalAmounts;
     return totalAmounts;
     //console.log(totalAmounts)
 
@@ -78,12 +74,18 @@ function displayExpenses(){
         <td>${item.name}</td>
         <td>${item.amount}<td>
         <td>
-            <a href="" class="btn btn-danger"><i class="fa fa-trash"></i>Delete</a>
+            <a href="" class="btn btn-danger delete-exp"><i class="fa fa-trash"></i>Delete</a>
             <a href="" class="btn btn-success"><i class="fa fa-pencil"></i>Edit</a>
         </td>`
         
         data.innerHTML = tableContent
-        tableBody.appendChild(data)
+        tableBody.appendChild(data);
+
     })
+}
+
+function deleteExp(){
+    expensesArr.splice()
+    
 }
 
