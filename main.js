@@ -20,8 +20,6 @@ let expensesArr = [];
 submitButton.addEventListener('click',(e)=>{
     e.preventDefault();
     displayBudget();
-    
-
 })
 
 expButton.addEventListener('click',(e)=>{
@@ -29,6 +27,7 @@ expButton.addEventListener('click',(e)=>{
     expenses();
     displayExpenses()
     displayExpenseBalance();
+
 })
 
 //functions
@@ -84,8 +83,14 @@ function displayExpenses(){
     })
 }
 
-function deleteExp(){
-    expensesArr.splice()
-    
-}
+///work on this
+function RemoveExp(){
+    const delButtons = document.querySelectorAll('.delete-exp');
 
+    delButtons.forEach(button=>{
+        button.addEventListener('click',(e)=>{
+            e.preventDefault();
+            
+        })
+    })
+}
