@@ -16,6 +16,9 @@
 //global variables
 let expensesArr = [];
 
+
+
+
 //EVENT LISTENERS
 submitButton.addEventListener('click',(e)=>{
     e.preventDefault();
@@ -90,6 +93,8 @@ function RemoveExp(){
     delButtons.forEach(button=>{
         button.addEventListener('click',(e)=>{
             e.preventDefault();
+            let clickedExp = e.target
+            
             
         })
     })
