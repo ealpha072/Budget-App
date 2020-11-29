@@ -76,26 +76,15 @@ function displayExpenses(){
         <td>${item.name}</td>
         <td>${item.amount}<td>
         <td>
-            <a href="" class="btn btn-danger delete-exp"><i class="fa fa-trash"></i>Delete</a>
-            <a href="" class="btn btn-success"><i class="fa fa-pencil"></i>Edit</a>
+            <button class="btn btn-danger delete-exp" onClick = "delete_row(this)"><i class="fa fa-trash"></i>Delete</button>
         </td>`
         
         data.innerHTML = tableContent
         tableBody.appendChild(data);
-
     })
 }
 
-///work on this
-function RemoveExp(){
-    const delButtons = document.querySelectorAll('.delete-exp');
-
-    delButtons.forEach(button=>{
-        button.addEventListener('click',(e)=>{
-            e.preventDefault();
-            let clickedExp = e.target
-            
-            
-        })
-    })
+function delete_row(e)
+{
+    e.parentNode.parentNode.parentNode.removeChild(e.parentNode.parentNode)
 }
