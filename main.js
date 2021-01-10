@@ -84,7 +84,11 @@ function displayExpenses(){
     })
 }
 
-function delete_row(e)
-{
-    e.parentNode.parentNode.parentNode.removeChild(e.parentNode.parentNode)
-}
+
+/*function deleteExp(){
+    let target = e.target.parentNode.parentNode;
+    console.log(target)
+    for(var i=0;i<=expensesArr.length;i++){
+        if(expensesArr[i].name===target){}
+    }
+}*/
