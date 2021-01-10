@@ -36,8 +36,8 @@ expButton.addEventListener('click',(e)=>{
 //functions
 function displayBudget(){
     let userBudget = budget.value;
-    budgetHead.innerHTML = userBudget;
-    balHead.innerHTML = userBudget;
+    budgetHead.textContent = userBudget;
+    balHead.textContent = userBudget;
 }
 
 function displayExpenseBalance(){
@@ -52,8 +52,8 @@ function displayExpenseBalance(){
      console.log(amounts)
 
     totalAmounts = amounts.reduce(function(a, b) { return a + b; }, 0);
-    expHead.innerHTML = totalAmounts;
-    balHead.innerHTML = budgetHead.innerHTML-totalAmounts;
+    expHead.textContent = totalAmounts;
+    balHead.textContent = budgetHead.textContent-totalAmounts;
     return totalAmounts;
     //console.log(totalAmounts)
 
