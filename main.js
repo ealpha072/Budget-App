@@ -104,15 +104,3 @@ function displayExpenses() {
         })
     })
 }
-
-
-/*let delBtns = document.querySelectorAll('#del');
-console.log(delBtns)
-
-delBtns.forEach(button => {
-    button.addEventListener('click', (e) => {
-        let target = e.target;
-        console.log(target)
-
-    })
-})*/
