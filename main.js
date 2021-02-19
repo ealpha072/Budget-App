@@ -33,9 +33,6 @@ expButton.addEventListener('click', (e) => {
     expenses();
     displayExpenses()
     displayExpenseBalance();
-    delbtnActive = true;
-
-
 })
 
 //functions
@@ -93,7 +90,7 @@ function displayExpenses() {
         tableBody.appendChild(data);
 
         let delBtns = document.querySelectorAll('#del');
-        console.log(delBtns)
+        //console.log(delBtns)
 
         delBtns.forEach(button => {
             button.addEventListener('click', (e) => {
@@ -107,7 +104,7 @@ function displayExpenses() {
                     }
                 })
                 expensesArr.splice(itemToDel, 1)
-                console.log(expensesArr)
+                    //console.log(expensesArr)
                 displayExpenses()
             })
         })
