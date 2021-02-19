@@ -97,26 +97,18 @@ function displayExpenses() {
 
         delBtns.forEach(button => {
             button.addEventListener('click', (e) => {
+                e.preventDefault()
                 let target = e.target.parentNode.parentNode;
-                let name = target.children[0].innerHTML
-                    //tableBody.removeChild(target);
-                    //console.log(expensesArr)
-                console.log(name)
-                console.log(expensesArr)
-
+                let name = target.children[0].innerHTML;
                 var itemToDel = expensesArr.findIndex(function(item, index) {
                     if (item.name === name) {
                         console.log("Found")
                         return true
                     }
-
                 })
-
                 expensesArr.splice(itemToDel, 1)
                 console.log(expensesArr)
-
-
-
+                displayExpenses()
             })
         })
     })
