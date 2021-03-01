@@ -73,7 +73,7 @@ function expenses() {
     })
 }
 
-
+//display expenses
 function displayExpenses() {
     tableBody.innerHTML = '';
     expensesArr.forEach(item => {
