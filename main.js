@@ -16,10 +16,6 @@ const tableBody = document.querySelector(".table-body")
 //global variables
 let expensesArr = [];
 
-//
-let delbtnActive = false;
-
-
 //EVENT LISTENERS
 submitButton.addEventListener('click', (e) => {
     e.preventDefault();
