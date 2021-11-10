@@ -3,4 +3,4 @@ This project was based on the 100 JS challenges. It is built with css, HTML and 
 ## Things learnt;
    * Git commands- Git pull, git commit, git push, git rebase, git clone.
    * Vscode terminal navigation.
-   * Opening vscode from the command line.
+   * Opening vscode from the command line
