@@ -12,66 +12,74 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <h1 class="mainheader text-center">Alpha Budget App 2021</h1>
-        <div class="row">
-            <div class="col-4 first-row">
-                <div class="row">
-                    <div class="budget">
-                        <form action="">
-                            <div class="form-group">
-                                <label for="enter-buget">Amount</label><br>
-                                <input type="number" class="form-control form-control-sm" placeholder="Enter your budget" id="budget-amount"><br>
-                            </div>
-                            <button class="btn btn-success btn-sm submit-amt" type="submit">Calculate</button>
-                        </form>
-
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="expenses">
-                        <form action="" class="expense-form">
-                            <div class="form-group">
-                                <label for="enter-expense-name">Expense</label><br>
-                                <input type="text" placeholder="Expense name" class="form-control form-control-sm exp-name"><br>
-                            </div>
-                            <div class="form-group">
-                                <label for="enter-expense-amount">Amount</label><br>
-                                <input type="number" placeholder="Amount of expense" class="form-control form-control-sm exp-amt"><br>
-                            </div>
-                            <button class="btn btn-success btn-sm submit-exp">Add Expense</button>
-                        </form>
-                    </div>
-                </div>
+    <div class="container-fluid" style="margin-top: 20px;">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="text-center">Budget Tracker</h4>
             </div>
-            <div class="col-6 second-row">
-                <div class="row">
-                    <div class="col">
-                        <h2 class="user-budget">Budget</h2><br>
-                        <i class="fa fa-usd"></i><br>
-                        <h5 class="budget-head"></h5>
+            <div class="card-body row">
+                <div class="card col-lg-4 col-md-4 col-sm-5 col-12" id="forms">
+                    <div class="card row" id="budget-amount">
+                        <div class="card-header">
+                            <h6>Budget</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="">
+                                <div class="input">
+                                    <input type="number" placeholder="Amount" class="form-control form-control-sm">
+                                </div>
+                                <div class="button">
+                                    <button type="submit" class="btn btn-sm btn-primary">Add</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <div class="col">
-                        <h2 class="expense">Expense</h2><br>
-                        <i class="fa fa-credit-card"></i><br>
-                        <h5 class="exp-head"></h5>
-                    </div>
-                    <div class="col">
-                        <h2 class="balance">Balance</h2><br>
-                        <i class="fa fa-money"></i><br>
-                        <h5 class="bal-head"></h5>
+                    <div class="card row" id="expense-amount" style="margin-top: 10px;">
+                        <div class="card-header">
+                            <h6>Expense</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="">
+                                <div class="input">
+                                    <input type="text" placeholder="Expense Name" class="form-control form-control-sm">
+                                    <input type="number" placeholder="Amount" class="form-control form-control-sm">
+                                </div>
+                                <div class="button">
+                                    <button type="submit" class="btn btn-sm btn-primary">Add</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Expense</th>
-                                <th>Amount</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody class="table-body"></tbody>
+                <div class="card col-lg-8 col-md-8 col-sm-7 col-12" id="tracker">
+                    <div class="card-body">
+                        <div class="card">
+                            <div class="card-body row">
+                                <div class="budget-amt col">
+                                    <h6>Budget</h6>
+                                    <h6 id="b-amt">$</h6>
+                                </div>
+                                <div class="exp-amount col">
+                                    <h6>Exp Total</h6>
+                                    <h6 id="e-amt">$</h6>
+                                </div>
+                                <div class="bal col">
+                                    <h6>Balance</h6>
+                                    <h6 id="bal">$</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card" style="margin-top: 10px;">
+                            <table>
+                                <thead>
+                                    <th>Expense</th>
+                                    <th>Amount</th>
+                                    <th>Amount</th>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
