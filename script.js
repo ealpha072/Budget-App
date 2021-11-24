@@ -4,11 +4,6 @@
 $(function(){
     let expensesArray = [0], budgetArray = [0]
 
-    /*function Expense(name, amount){
-        this.name = name,
-        this.amount = amount
-    }*/
-
     let tbody = $('tbody'), expenseHeader = $('#e-amt'), budgetHeader = $('#b-amt'), balanceHeader = $('#bal')
 
     $('form#budget-form').submit((e)=>{
@@ -23,12 +18,14 @@ $(function(){
         e.preventDefault()
         let name = $('#exp-name-input').val()
         let exp = $('#exp-amt-input').val()
-        expensesArray.push(parseInt(exp))
+        expensesArray.push({name:name, amt:parseInt(exp)})
         updateTable(name, exp)
         updateExpense(expensesArray)
         showBalance()
     })
 
+    
+    
     const showBalance = ()=>{
         let balance =  budgetArray.reduce((a,b)=>a+b) - expensesArray.reduce((a,b)=>a+b)
 
@@ -48,10 +45,16 @@ $(function(){
     const updateTable = (expenseName, expenseAmount)=>{
         let tr = `<tr>
             <td>${expenseName}</td>
-            <td>$${-expenseAmount}</td>
-            <td>Delete</td>
+            <td class="text-danger font-weight-bolder">$${-expenseAmount}</td>
+            <td><button class="btn btn-sm btn-danger delete-item">Delete</button></td>
         </tr>`
         tbody.append(tr)
+
+        $('.delete-item').on('click',(e)=>{
+            let target = e.target.parentNode.parentNode
+            $(target).remove()
+            
+        })
     }
 
     const updateExpense = array=>{
