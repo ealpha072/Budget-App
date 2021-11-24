@@ -2,7 +2,7 @@
 
 //On submitting budget form, add the amount to divs head, update exp and ball
 $(function(){
-    let expensesArray = [0], budgetArray = [0]
+    let expensesArray = [], budgetArray = [0]
 
     let tbody = $('tbody'), expenseHeader = $('#e-amt'), budgetHeader = $('#b-amt'), balanceHeader = $('#bal')
 
@@ -19,7 +19,8 @@ $(function(){
         let name = $('#exp-name-input').val()
         let exp = $('#exp-amt-input').val()
         expensesArray.push({name:name, amt:parseInt(exp)})
-        updateTable(name, exp)
+        tbody.html('')
+        updateTable(expensesArray)
         updateExpense(expensesArray)
         showBalance()
     })
@@ -27,7 +28,7 @@ $(function(){
     
     
     const showBalance = ()=>{
-        let balance =  budgetArray.reduce((a,b)=>a+b) - expensesArray.reduce((a,b)=>a+b)
+        let balance =  budgetArray.reduce((a,b)=>a+b) - expensesArray.map(elem=>elem.amt).reduce((a,b)=>a+b)
 
         if(balance < 0){
             balanceHeader.removeClass('text-primary')
@@ -42,13 +43,15 @@ $(function(){
         }
     }
     
-    const updateTable = (expenseName, expenseAmount)=>{
-        let tr = `<tr>
-            <td>${expenseName}</td>
-            <td class="text-danger font-weight-bolder">$${-expenseAmount}</td>
-            <td><button class="btn btn-sm btn-danger delete-item">Delete</button></td>
-        </tr>`
-        tbody.append(tr)
+    const updateTable = (array)=>{
+        array.forEach(elem=>{
+            let tr = `<tr>
+                <td>${elem.name}</td>
+                <td class="text-danger font-weight-bolder">$${-elem.amt}</td>
+                <td><button class="btn btn-sm btn-danger delete-item">Delete</button></td>
+            </tr>`
+            tbody.append(tr)
+        })
 
         $('.delete-item').on('click',(e)=>{
             let target = e.target.parentNode.parentNode
@@ -59,7 +62,7 @@ $(function(){
 
     const updateExpense = array=>{
         expenseHeader.text('')
-        expenseHeader.text('$'+array.reduce((a,b)=>{return a+b}))
+        expenseHeader.text('$'+ array.map(elem=>elem.amt).reduce((a,b)=>{return a+b}))
     }
 
     const updateIncome = array => {
