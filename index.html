@@ -18,22 +18,21 @@
                 <h4 class="text-center">Budget Tracker</h4>
             </div>
             <div class="card-body row">
-                <div class="card col-lg-4 col-md-5 col-sm-4 col-12" id="forms">
+                <div class="card col-lg-4 col-md-4 col-sm-4 col-12" id="forms">
                     <div class="card row" id="budget-amount">
                         <div class="card-header">
-                            <h6>Budget</h6>
+                            <h6>Income</h6>
                         </div>
                         <div class="card-body">
-                            <form action="" class="">
+                            <form action="" id="budget-form">
                                 <div class="form-group row">
                                     <div class="col-lg-8 col-md-8  col-sm-8 col-8">
-                                        <input type="text" class="form-control form-control-sm">
+                                        <input type="number" class="form-control form-control-sm" required id="budget-input" value="1000">
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-4">
-                                        <button type="submit" class="btn btn-outline-primary btn-sm">Add</button>
+                                        <button type="submit" class="btn btn-outline-primary btn-sm" >Add</button>
                                     </div>
-                                </div>
-                                                         
+                                </div>                    
                             </form>
                         </div>
                     </div>
@@ -43,34 +42,34 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group">
-                                <form action="">
+                                <form action="" id="exp-info">
                                     <div class="input">
-                                        <input type="text" placeholder="Expense Name" class="form-control form-control-sm">
-                                        <input type="number" placeholder="Amount" class="form-control form-control-sm">
+                                        <input type="text" placeholder="Expense Name" class="form-control form-control-sm" style="margin-bottom: 5px;" required id="exp-name-input" value="Buy Milk">
+                                        <input type="number" placeholder="Amount" class="form-control form-control-sm" style="margin-bottom: 5px;" required  id="exp-amt-input" value="200">
                                     </div>
                                     <div class="button">
-                                        <button type="submit" class="btn btn-sm btn-primary">Add</button>
+                                        <button type="submit" class="btn btn-sm btn-primary" id="add-exp">Add</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card col-lg-8 col-md-7 col-sm-8 col-12" id="tracker">
+                <div class="card col-lg-8 col-md-8 col-sm-8 col-12" id="tracker">
                     <div class="card-body">
                         <div class="card">
                             <div class="card-body row">
                                 <div class="budget-amt col">
-                                    <h6>Budget</h6>
-                                    <h6 id="b-amt">$</h6>
+                                    <h4>Budget</h4>
+                                    <h5 id="b-amt" class="text-success font-weight-bold">0</h5>
                                 </div>
                                 <div class="exp-amount col">
-                                    <h6>Exp Total</h6>
-                                    <h6 id="e-amt">$</h6>
+                                    <h4>Exp Total</h4>
+                                    <h5 id="e-amt" class="text-danger font-weight-bold">0</h5>
                                 </div>
                                 <div class="bal col">
-                                    <h6>Balance</h6>
-                                    <h6 id="bal">$</h6>
+                                    <h4>Balance</h4>
+                                    <h5 id="bal" class="text-primary font-weight-bold">0</h5>
                                 </div>
                             </div>
                         </div>
@@ -80,15 +79,11 @@
                                     <tr>
                                         <th scope="col">Expense</th>
                                         <th scope="col">Amount</th>
-                                        <th scope="col" class="text-center">Action</th>
+                                        <th scope="col" class="text-center" colspan="2">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -98,7 +93,7 @@
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 
