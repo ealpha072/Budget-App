@@ -2,7 +2,7 @@
 
 //On submitting budget form, add the amount to divs head, update exp and ball
 $(function(){
-    let expensesArray = [], budgetArray = [0]
+    let expensesArray = [{amt:0}], budgetArray = [0]
 
     let tbody = $('tbody'), expenseHeader = $('#e-amt'), budgetHeader = $('#b-amt'), balanceHeader = $('#bal')
 
@@ -28,7 +28,7 @@ $(function(){
     
     
     const showBalance = ()=>{
-        let balance =  budgetArray.reduce((a,b)=>a+b) - expensesArray.map(elem=>elem.amt).reduce((a,b)=>a+b)
+        let balance = budgetArray.reduce((a,b)=>a+b) - expensesArray.map(elem=>elem.amt).reduce((a,b)=>a+b)
 
         if(balance < 0){
             balanceHeader.removeClass('text-primary')
@@ -45,12 +45,14 @@ $(function(){
     
     const updateTable = (array)=>{
         array.forEach(elem=>{
-            let tr = `<tr>
-                <td>${elem.name}</td>
-                <td class="text-danger font-weight-bolder">$${-elem.amt}</td>
-                <td><button class="btn btn-sm btn-danger delete-item">Delete</button></td>
-            </tr>`
+            if(elem.hasOwnProperty('name')){
+                let tr = `<tr>
+                    <td>${elem.name}</td>
+                    <td class="text-danger font-weight-bolder">$${-elem.amt}</td>
+                    <td><button class="btn btn-sm btn-danger delete-item">Delete</button></td>
+                </tr>`
             tbody.append(tr)
+            }
         })
 
         $('.delete-item').on('click',(e)=>{
@@ -61,7 +63,6 @@ $(function(){
             for (let i = 0; i < expensesArray.length; i++) {
                 if(expensesArray[i].name === childElem){
                     expensesArray.splice(expensesArray.indexOf(expensesArray[i]), 1)
-                    console.log(expensesArray)
                 }
             }
             $(target).remove()
