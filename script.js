@@ -56,7 +56,7 @@ $(function(){
             let childElem = target.children('td').html()
 
             for (let i = 0; i < expensesArray.length; i++) {
-                if(expensesArray[i].name === childElem){
+                if(expensesArray[i].hasOwnProperty('name') && expensesArray[i].name === childElem){
                     expensesArray.splice(expensesArray.indexOf(expensesArray[i]), 1)
                 }
             }
