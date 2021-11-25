@@ -1,6 +1,3 @@
-//DOM ELEMENTS
-
-//On submitting budget form, add the amount to divs head, update exp and ball
 $(function(){
     let expensesArray = [{amt:0}], budgetArray = [0]
 
@@ -24,8 +21,6 @@ $(function(){
         updateExpense(expensesArray)
         showBalance()
     })
-
-    
     
     const showBalance = ()=>{
         let balance = budgetArray.reduce((a,b)=>a+b) - expensesArray.map(elem=>elem.amt).reduce((a,b)=>a+b)
@@ -51,7 +46,7 @@ $(function(){
                     <td class="text-danger font-weight-bolder">$${-elem.amt}</td>
                     <td><button class="btn btn-sm btn-danger delete-item">Delete</button></td>
                 </tr>`
-            tbody.append(tr)
+                tbody.append(tr)
             }
         })
 
@@ -80,7 +75,6 @@ $(function(){
         budgetHeader.text('')
         budgetHeader.text('$'+array.reduce((a,b)=> a+b))
     }
-    
 })
 
 
