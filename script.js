@@ -54,9 +54,19 @@ $(function(){
         })
 
         $('.delete-item').on('click',(e)=>{
-            let target = e.target.parentNode.parentNode
+            e.preventDefault()
+            let target = $(e.target).parents('tr')
+            let childElem = target.children('td').html()
+
+            for (let i = 0; i < expensesArray.length; i++) {
+                if(expensesArray[i].name === childElem){
+                    expensesArray.splice(expensesArray.indexOf(expensesArray[i]), 1)
+                    console.log(expensesArray)
+                }
+            }
             $(target).remove()
-            
+            updateExpense(expensesArray)
+            showBalance()
         })
     }
 
