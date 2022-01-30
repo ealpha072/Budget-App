@@ -4,4 +4,5 @@ This project was based on the 100 JS challenges. It is built with css, HTML and 
    * Git commands- Git pull, git commit, git push, git rebase, git clone.
    * Vscode terminal navigation
    * Opening vscode from the command line
+   * Everything git and git bash
 Demo here --> https://ealpha072.github.io/Budget-App/
