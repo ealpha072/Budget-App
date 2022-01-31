@@ -4,5 +4,5 @@ This project was based on the <a href="https://jsbeginners.com/javascript-projec
    * Git commands- Git pull, git commit, git push, git rebase, git clone.
    * Vscode terminal navigation
    * Opening vscode from the command line
-   * Everything git and git bash
+   * Everything git and git bash related
 Demo here --> https://ealpha072.github.io/Budget-App/
