@@ -5,4 +5,5 @@ This project was based on the <a href="https://jsbeginners.com/javascript-projec
    * Vscode terminal integration and use
    * Opening vscode from the command line
    * Everything git and git bash related
+   * Linux integration with VSCODE and git
 Demo here --> https://ealpha072.github.io/Budget-App/
