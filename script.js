@@ -65,7 +65,8 @@ $(function(){
             showBalance()
         })
     }
-
+    
+    //update expenses
     const updateExpense = array=>{
         expenseHeader.text('')
         expenseHeader.text('$'+ array.map(elem=>elem.amt).reduce((a,b)=>{return a+b}))
