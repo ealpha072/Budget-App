@@ -66,7 +66,7 @@ $(function(){
         })
     }
     
-    //update expenses
+    //update expenses FUNCTION
     const updateExpense = array=>{
         expenseHeader.text('')
         expenseHeader.text('$'+ array.map(elem=>elem.amt).reduce((a,b)=>{return a+b}))
